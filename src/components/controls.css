@@ -1,0 +1,52 @@
+.controls {
+    display: flex;
+    justify-content: space-around;
+
+}
+.main-controls {
+display: flex;
+justify-content: center;
+}
+.main-controls button {
+ 
+    background: #0d41f7;
+    outline: 1px solid grey;
+    padding: 0;
+    color: #fff;
+    width: 30px;
+    height: 25px;
+    border: none;
+}
+.labels {
+width: 150px;
+height: 110px;
+border-radius: 10px;
+background: #ef3f7b;
+padding: 10px;
+}
+
+#time-left {
+    font-size: 2.5em;
+}
+.button-controls {
+display: flex;
+justify-content: space-between;
+align-content: center;
+border: 1px solid #8998ce;
+margin-top: 20px;
+border-radius: 20px;
+}
+.button-controls button {
+font-size: 1.2em;
+background: #0e0ef7;
+border: none;
+padding: 0 10px;
+color: #fff;
+
+}
+.button-controls button:first-child {
+    border-radius: 20px 0 0 20px;
+} 
+.button-controls button:last-child {
+    border-radius: 0 20px 20px 0;
+} 
