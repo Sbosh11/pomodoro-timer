@@ -3,6 +3,7 @@ import ControlLength from './components/control-length';
 import Timer from './components/timer';
 import ControlTimer from './components/control-timer';
 import mp3_file from './components/short-beep.mp3';
+import Instructions from './components/instructions';
 
 import './App.css';
 
@@ -12,22 +13,22 @@ class App extends Component {
     this.state = {
      mode: 'session',
      time: 25 * 60 ,
-     session: .1,
-     break: .1,
+     session: 25,
+     break: 5,
      active: false,
      started: false
 
     }
   } 
 
-    componentDidUpdate(prevState) {
+    componentDidUpdate(prevProps, prevState) {
   if(prevState.time === 0 && prevState.mode === 'session'){
     this.setState({time: this.state.break * 60 , mode: 'break'})
-    this.audio.play()
+   this.audio.play()
   }
   if(prevState.time === 0 && prevState.mode === 'break') {
     this.setState({time: this.state.session * 60 , mode: 'session'})
-    this.audio.play()
+   this.audio.play()
   }
 }
 
@@ -103,12 +104,15 @@ this.setState({[type]: this.state[type] +( increment ? 1: -1 )})
       <div className = 'controls'>
      <ControlLength type ='break' value={this.state.break}  handleClick={this.setTimer}/>
      <ControlLength  type ='session' value={session} handleClick={this.setTimer}/>
+     <audio id='beep'  ref={el => this.audio =el}
+    type="audio/mp3" src={mp3_file}
+    >
+     </audio>
       </div>
-      <audio id='beep'  ref={el => this.audio =el}>
-      <source id="src_mp3" type="audio/mp3" src={mp3_file}/>
-      </audio>
       </div>
+      <Instructions />
       </div>
+     
      
     );
   }

@@ -1,6 +1,7 @@
 .controls {
     display: flex;
     justify-content: space-around;
+    margin: 20px;
 
 }
 .main-controls {
@@ -16,6 +17,7 @@ justify-content: center;
     width: 30px;
     height: 25px;
     border: none;
+    box-shadow: 5px 5px 7px 1px rgba(00,00,00,0.2);
 }
 .labels {
 width: 150px;
@@ -23,6 +25,7 @@ height: 110px;
 border-radius: 10px;
 background: #ef3f7b;
 padding: 10px;
+box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
 }
 
 #time-left {
@@ -50,3 +53,11 @@ color: #fff;
 .button-controls button:last-child {
     border-radius: 0 20px 20px 0;
 } 
+
+ 
+@media (max-width: 399px) {
+    .labels {
+   margin: 10px;
+  
+     }
+   }
