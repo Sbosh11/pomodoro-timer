@@ -1,4 +1,4 @@
-This project was with Love for Freecodecamp
+This project was created with love for Freecodecamp
 
 ## Available Scripts
 
